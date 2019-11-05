@@ -18,16 +18,29 @@ Como se indicó antes, Javier y Andreína deben llegar al mismo momento a la ent
 
 ## Estructuras de Datos
 
-### Nodo
-- Identificador del nodo.
-- Is start node (s). (Hay 2, uno para Javier y uno para Andreina)
-- Is finish (t). (Depende del lugar a donde quieren ir)
+### Vértice
+- Identificador del vértice.
+- IsStartNode (s). (Hay 2, uno para Javier y uno para Andreina)
+- IsFinish (t). (Depende del lugar a donde quieren ir)
 - dx1. (Distancia desde la casa de Javier al nodo x)
 - dx2. (Distancia desde la casa de Andreina al nodo x)
-- isJavierhere. (Javier está en el nodo)
-- isAndreinahere. (Andreina está en el nodo)
+- isInAndreinaPath. (Coloreo para Andreina)
+- isInJavierPath. (Coloreo para Javier)
 
 ### Arco
-- Tiempo. (Peso)
-- Nodo Extremo 1.
-- Nodo Extremo 2.
+- weight. (Tiempo/Peso)
+- nodeEnd1. (Nodo Extremo 1)
+- nodeEnd2. (Nodo Extremo 2)
+- isInAndreinaPath. (Coloreo para Andreina)
+- isInJavierPath. (Coloreo para Javier)
+
+## Posibles Soluciones
+- Hacer Djikstra con uno y adaptar al otro a su camino.
+  - Consideraciones:
+    - Calcular tiempos de salida post algoritmo.
+    - Verficar la profundidad del vértice en el camino, para evitar coincidencias entre Javier y Andreina.
+- Hacer hilos y darle un semáforo a cada vértice:
+  - Requiere atributos extra como:
+    En el nodo:
+    - isOcupado. (Javier o Andreina están en el nodo/Semaphore).
+    
