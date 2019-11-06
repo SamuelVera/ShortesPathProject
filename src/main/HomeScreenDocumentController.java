@@ -37,7 +37,7 @@ public class HomeScreenDocumentController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
 
     /**
@@ -47,7 +47,9 @@ public class HomeScreenDocumentController implements Initializable {
     @FXML
     private void goAClick(MouseEvent event) throws IOException{
         System.out.println("Go to Darkness Discotheque");
-        //Selecting Darkness Discotheque as ending node for the algorithm
+            //Selecting Darkness Discotheque as ending node for the algorithm
+            //Calle 54 - 4 = 50 y Carrera 11 + 3 = 14
+        main.bogota.setTerminalNode(4, 3);
         this.changeScreen(); //Change screen from the root
     }
 
@@ -58,7 +60,9 @@ public class HomeScreenDocumentController implements Initializable {
     @FXML
     private void goBClick(MouseEvent event) throws IOException{
         System.out.println("Go to La Pasión Bar");
-        //Selecting La Pasión Bar as ending node for the algorithm
+            //Selecting La Pasión Bar as ending node for the algorithm
+            //Calle 54 - 0 = 54 y Carrera 11 + 0 = 10
+        main.bogota.setTerminalNode(0, 0);
         this.changeScreen(); //Change screen from the root
     }
 
@@ -69,7 +73,9 @@ public class HomeScreenDocumentController implements Initializable {
     @FXML
     private void goCClick(MouseEvent event) throws IOException{
         System.out.println("Go to Mi Rolita Brewery");
-        //Selecting Mi Rolita Brewery as ending node for the algorithm
+            //Selecting Mi Rolita Brewery as ending node for the algorithm
+            //Calle 54 - 4 = 50 y Carrera 11 + 1 = 12
+        main.bogota.setTerminalNode(4, 1);
         this.changeScreen(); //Change screen from the root
     }
     
