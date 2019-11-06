@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" pickOnBounds="false" prefHeight="480.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeScreenDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="-1.0" layoutY="-1.0" minHeight="16" minWidth="69" prefHeight="486.0" prefWidth="647.0" style="-fx-background-color: linear-gradient(from 0% 50% to 50% 50%, repeat,  darkgray, white );" />
+      <JFXButton id="goA" fx:id="goA" buttonType="RAISED" layoutX="228.0" layoutY="58.0" onMouseClicked="#goAClick" style="-fx-border-color: black; -fx-border-radius: 10%; -fx-background-color: lightgray; -fx-background-radius: 27%;" text="Ir a la Discoteca &quot;The Darkness&quot;" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="100.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></JFXButton>
+      <JFXButton id="goB" fx:id="goB" buttonType="RAISED" layoutX="229.0" layoutY="223.0" onMouseClicked="#goBClick" style="-fx-border-color: black; -fx-border-radius: 10%; -fx-background-color: lightgray; -fx-background-radius: 27%;" text="Ir al bar &quot;La Pasión&quot;" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="228.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></JFXButton>
+      <JFXButton id="goC" fx:id="goC" buttonType="RAISED" layoutX="300.0" layoutY="374.0" onMouseClicked="#goCClick" style="-fx-border-color: black; -fx-border-radius: 10%; -fx-background-color: lightgray; -fx-background-radius: 27%;" text="Ir a la cervecería &quot;Mi Rolita&quot;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="229.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></JFXButton>
+    </children>
+</AnchorPane>
