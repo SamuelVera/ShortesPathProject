@@ -18,10 +18,15 @@ Como se indicó antes, Javier y Andreína deben llegar al mismo momento a la ent
 
 ## Estructuras de Datos
 
+### Gráfo
+- Vértice inicial de Javier.
+- Vértice inicial de Andreina.
+- Vértice final.
+- Lista de nodos.
+- Lista de arcos.
+
 ### Vértice
 - Identificador del vértice.
-- IsStartNode (s). (Hay 2, uno para Javier y uno para Andreina)
-- IsFinish (t). (Depende del lugar a donde quieren ir)
 - dx1. (Distancia desde la casa de Javier al nodo x)
 - dx2. (Distancia desde la casa de Andreina al nodo x)
 - isInAndreinaPath. (Coloreo para Andreina)
@@ -39,8 +44,4 @@ Como se indicó antes, Javier y Andreína deben llegar al mismo momento a la ent
   - Consideraciones:
     - Calcular tiempos de salida post algoritmo.
     - Verficar la profundidad del vértice en el camino, para evitar coincidencias entre Javier y Andreina.
-- Hacer hilos y darle un semáforo a cada vértice:
-  - Requiere atributos extra como:
-    En el nodo:
-    - isOcupado. (Javier o Andreina están en el nodo/Semaphore).
     
