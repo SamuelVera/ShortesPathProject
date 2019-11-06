@@ -42,6 +42,11 @@ public class GraphScreenDocumentController implements Initializable{
     @FXML
     private void onCalcJavierClick(MouseEvent event) {
         System.out.println("Javier first");
+            //Set Javier going first
+        this.calcJavier.setVisible(false);
+        this.calcAndreina.setVisible(false);
+        main.bogota.prepareForDijkstra();
+        main.bogota.runDijkstraFirstForJavier();
     }
 
     /**
@@ -51,6 +56,12 @@ public class GraphScreenDocumentController implements Initializable{
     @FXML
     private void onCalcAndreinaClick(MouseEvent event) {
         System.out.println("Andreina first");
+        this.calcJavier.setVisible(false);
+        this.calcAndreina.setVisible(false);
+        main.bogota.prepareForDijkstra();
+        main.bogota.runDijkstraFirstForAndreina();
     }
+    
+    
     
 }
