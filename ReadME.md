@@ -44,5 +44,5 @@ Como se indicó antes, Javier y Andreína deben llegar al mismo momento a la ent
 - Hacer Djikstra con uno y adaptar al otro a su camino.
   - Consideraciones:
     - Calcular tiempos de salida post algoritmo.
-    - Verficar la profundidad del vértice en el camino, para evitar coincidencias entre Javier y Andreina.
+    - Verficar los pesos acumulados de los caminos parciales tomando en cuenta el tiempo que tiene que salir uno antes que el otro para reestructurar el árbol generado por el algoritmo de Dijkstra.
     
