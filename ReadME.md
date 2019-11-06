@@ -26,7 +26,8 @@ Como se indicó antes, Javier y Andreína deben llegar al mismo momento a la ent
 - Lista de arcos.
 
 ### Vértice
-- Identificador del vértice.
+- Calle.
+- Carrera.
 - dx1. (Distancia desde la casa de Javier al nodo x)
 - dx2. (Distancia desde la casa de Andreina al nodo x)
 - isInAndreinaPath. (Coloreo para Andreina)
