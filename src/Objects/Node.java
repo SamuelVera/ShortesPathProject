@@ -15,6 +15,7 @@ public class Node {
     private double dx2; //Distance from Andreina's House to this node
     private boolean isInAndreinaPath; //This node in Andreina's path
     private boolean isInJavierPath; //This node is in Javier's path
+    private boolean isVisitedInDepth; //Check if the node has been visited in the depth search
     
         //Construction of the node
     Node(int calle, int carrera){
@@ -57,7 +58,12 @@ public class Node {
     public int getCarrera() {
         return carrera;
     }
-    
-    
-    
+
+    public boolean isIsVisitedInDepth() {
+        return isVisitedInDepth;
+    }
+    public void setIsVisitedInDepth(boolean isVisitedInDepth) {
+        this.isVisitedInDepth = isVisitedInDepth;
+    }
+
 }
