@@ -23,59 +23,59 @@ public class Graph {
     private Node andreinaInitialNode;
     //Encounter Point
     private Node terminalNode;
-
     //Real paths
     private Stack<Node> javierRealPath;
     private Stack<Node> andreinaRealPath;
 
-    //Contructor for the node
+    //Contructor for the graph
     public Graph() {
         //5x5 Node array
-        this.nodeArray = new Node[5][5];
+        this.nodeArray = new Node[6][6];
         //Initialized Node list
-        for (int i = 0; i < 5; i++) { //5 Calles (54-53-52-51-50)
-            for (int j = 0; j < 5; j++) { //5 Carreras (11-12-13-14-15)
+        for (int i = 0; i < 6; i++) { //5 Calles (55-54-53-52-51-50)
+            for (int j = 0; j < 6; j++) { //5 Carreras (15-14-13-12-11-10)
                 this.nodeArray[i][j] = new Node(
-                        54 - i, //Calle
-                        11 + j //Carrera
+                        55 - i, //Calle
+                        15 - j //Carrera
                 ); //New node                
             }
         }
         // Create Edges List form west to east and south to north
-        for (int i = 4; i > -1; i--) { //Calles 53-52-51-50
-            for (int j = 0; j < 5; j++) { //Carreras 11-12-13-14
-                if (i != 0 || j != 4) { //La esquina superior derecha ya tiene sus arcos arreglados
-                    if (i == 0) { //Calle 50
+        for (int i = 0; i < 6; i++) { //Calles 55-54-53-52-51-50
+            for (int j = 0; j < 6; j++) { //Carreras 15-14-13-12-11-10
+                if (i != 5 || j != 5) { //La esquina inferior derecha ya tiene sus arcos arreglados
+                    if (i == 5) { //Calle 50
                         this.edgesList.add(new Edge( //West to East Edge
                                 this.nodeArray[i][j], //Initial
                                 this.nodeArray[i][j + 1], //Final
                                 5
                         )
                         );
-                    } else if (j == 4) { //Carrera 15
+                    } else if (j == 5) { //Carrera 10
                         this.edgesList.add(new Edge( //South to North Edge
                                 this.nodeArray[i][j], //Initial
-                                this.nodeArray[i - 1][j], //Final
+                                this.nodeArray[i + 1][j], //Final
                                 5
                         )
                         );
                     } else { //Other Calles
-                        if (j == 0 || j == 1 || j == 2) { //Carreras 11, 12 and 13 in bad shape
+                        if (j == 4 || j == 3 || j == 2) { //Carreras 11, 12 and 13 in bad shape
                             this.edgesList.add(new Edge( //South to North Edge
                                     this.nodeArray[i][j], //Initial
-                                    this.nodeArray[i - 1][j], //Final
+                                    this.nodeArray[i + 1][j], //Final
                                     7
                             )
                             );
                         } else {
                             this.edgesList.add(new Edge( //South to North Edge
                                     this.nodeArray[i][j], //Initial
-                                    this.nodeArray[i - 1][j], //Final
+
+                                    this.nodeArray[i + 1][j], //Final
                                     5
                             )
                             );
                         }
-                        if (i == 3) { //Calle 51 with big comercial activity
+                        if (i == 4) { //Calle 51 with big comercial activity
                             this.edgesList.add(new Edge( //West to East Edge
                                     this.nodeArray[i][j], //Initial
                                     this.nodeArray[i][j + 1], //Final
@@ -94,10 +94,10 @@ public class Graph {
                 }
             }
         }
-        //Javier's house Calle 54 - 0 = 54 / Carrera 11 + 3 = 14
-        this.javierInitalNode = this.nodeArray[0][3];
-        //Andreina's house Calle 54 - 2 = 52 / Carrera 11 + 2 = 13
-        this.andreinaInitialNode = this.nodeArray[2][2];
+        //Javier's house Calle 55 - 1 = 54 / Carrera 15 - 1 = 14
+        this.javierInitalNode = this.nodeArray[1][1];
+        //Andreina's house Calle 55 - 3 = 52 / Carrera 15 - 2 = 13
+        this.andreinaInitialNode = this.nodeArray[3][2];
     }
 
     //Set an Encounter Point
@@ -116,15 +116,15 @@ public class Graph {
 
     //Clean for running Dijkstra Algorithm
     public void prepareForDijkstra() {
-        for (int i = 0; i < 5; i++) { //Clean nodes and set dx
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 6; i++) { //Clean nodes and set dx
+            for (int j = 0; j < 6; j++) {
                 this.nodeArray[i][j].setIsVisitedInDepth(false);
                 this.nodeArray[i][j].setIsInAndreinaPath(false);
                 this.nodeArray[i][j].setIsInJavierPath(false);
-                if (i == 0 && j == 3) { //Javier's house
+                if (i == 1 && j == 1) { //Javier's house
                     this.nodeArray[i][j].setDx1(0);
                     this.nodeArray[i][j].setDx2(Double.POSITIVE_INFINITY);
-                } else if (i == 2 && j == 2) { //Andreina's house
+                } else if (i == 3 && j == 2) { //Andreina's house
                     this.nodeArray[i][j].setDx1(Double.POSITIVE_INFINITY);
                     this.nodeArray[i][j].setDx2(0);
                 } else { //Every other node
@@ -141,13 +141,12 @@ public class Graph {
 
     //Prepare for the second Dijkstra
     public void prepareForSecondDijkstraForJavier() {
-
         //Find Andreina's Real Path
         this.andreinaRealPath = this.findRealPath(this.andreinaInitialNode, true);
 
         //Final cleaning before the second run of the algorithm
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
                 if (!this.andreinaRealPath.contains(this.nodeArray[i][j])) {
                     this.nodeArray[i][j].setIsInAndreinaPath(false); //Clean node that isn't in Andreina's Real Path
                 }
@@ -162,27 +161,26 @@ public class Graph {
         //Find Javier's real path
         this.javierRealPath = this.findRealPath(this.javierInitalNode, false);
         //Final clean before second run
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
                 if (!this.javierRealPath.contains(this.nodeArray[i][j])) {
                     this.nodeArray[i][j].setIsInJavierPath(false); //Clean node that isn't in Javiers Real Path
                 }
                 this.nodeArray[i][j].setIsVisitedInDepth(false); //Clean for search of the second path
             }
         }
-
         this.runDijkstraSecondForAndreina();
     }
-
     //Find the real path depending on the passed node
+
     private Stack<Node> findRealPath(Node n, boolean forAndreina) {
         //Run a depth first search to find the path from the encounter point to Andreina's house
         Stack<Node> potentialPath = new Stack<>(); //Stack for the depth first search
         //The stack will have the path
 
         System.out.println("Find the real path");
-
-        potentialPath.push(this.terminalNode);//Push the terminal node into the stack
+        potentialPath
+                .push(this.terminalNode);//Push the terminal node into the stack
         //The depth search will stop when the passed node house is pushed into the stack
         //Aux List to get predecesors that haven been visited from the node that's being evaluated
         LinkedList<Node> predecessors;
@@ -196,7 +194,8 @@ public class Graph {
                 potentialPath.pop();
             } else {
                 //If there are predecessors that hasnt been visited push the first of them to the stack
-                potentialPath.push(predecessors.getFirst());
+                potentialPath
+                        .push(predecessors.getFirst());
                 //If this one happens to be the starting node for Andreina the algorithm will stop
             }
         }
@@ -208,30 +207,31 @@ public class Graph {
     private LinkedList<Node> getPredecessorsNotVisitedOfNode(Node n, boolean forAndreina) {
         LinkedList<Node> predecessors = new LinkedList();
 
-        for (int i = 0; i < 5; i++) { //Search in al the nodes
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 6; i++) { //Search in al the nodes
+            for (int j = 0; j < 6; j++) {
                 Edge e = this.findEdge(n, this.nodeArray[i][j]);
                 if (forAndreina) {
                     if (e != null && (e.isIsInAndreinaPath())) {
                         //If both nodes are adjacent and the edge is in the path
                         if ((this.nodeArray[i][j].isIsInAndreinaPath())
-                                && !this.nodeArray[i][j].isIsVisitedInDepth()) {  //If the node is in one of both paths and it hasnt been visited in the depth search
+                                && !this.nodeArray[i][j].isIsVisitedInDepth()) { //If the node is in one of both paths and it hasnt been visited in the depth search
                             //Add it to the aux List
                             System.out.println("Fans");
                             predecessors.add(this.nodeArray[i][j]);
                         }
                     }
+
                 } else {
                     if (e != null && (e.isIsInJavierPath())) {
                         //If both nodes are adjacent and the edge is in Javier's the path
                         if ((this.nodeArray[i][j].isIsInJavierPath())
-                                && !this.nodeArray[i][j].isIsVisitedInDepth()) {  //If the node is in one of both paths and it hasnt been visited in the depth search
+                                && !this.nodeArray[i][j].isIsVisitedInDepth()) { //If the node is in one of both paths and it hasnt been visited in the depth search
                             //Add it to the aux List
-                            predecessors.add(this.nodeArray[i][j]);
+                            predecessors
+                                    .add(this.nodeArray[i][j]);
                         }
                     }
                 }
-
             }
         }
 
@@ -246,8 +246,8 @@ public class Graph {
         while (!this.terminalNode.isIsInJavierPath()) { //While Javier hasnt reached the encounter point
             System.out.println("Colored Calle " + y.getCalle() + " Carrera " + y.getCarrera());
             y.setIsInJavierPath(true); //Set y in javiers path
-            for (int i = 0; i < 5; i++) {
-                for (int j = 0; j < 5; j++) {
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
                     if (!this.nodeArray[i][j].isIsInJavierPath()) { //For each node that isnt in Javier's path
                         Edge e = this.findEdge(y, this.nodeArray[i][j]); //Auxiliar edge for calcs
                         if (e != null) { //If the edge exists continue with calcs
@@ -269,9 +269,8 @@ public class Graph {
                 break;
             } else {
                 Edge e = null; //Find edge to color;
-                for (int i = 0; i < 5; i++) {
-                    for (int j = 0; j < 5; j++) {
-                        //For each colored node
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < 6; j++) { //For each colored node
                         if (this.nodeArray[i][j].isIsInJavierPath()) {
                             //Find edge
                             Edge auxEdge = this.findEdge(this.nodeArray[i][j], nextY);
@@ -288,12 +287,13 @@ public class Graph {
                     }
                 }
 
-                System.out.println("Colored edge from "
-                        + "Calle " + e.getNodeEnd1().getCalle() + " Carrera " + e.getNodeEnd1().getCarrera()
-                        + " to Calle " + e.getNodeEnd2().getCalle() + " Carrera " + e.getNodeEnd2().getCarrera());
-                e.setIsInJavierPath(true); //Color the edge
-                y = nextY; //Next y to calc
-                nextY = null; //Nullify for new candidates
+                if (e != null) {
+                    e.setIsInJavierPath(true); //Color the edge
+                    y = nextY; //Next y to calc
+                    nextY = null; //Nullify for new candidates
+                } else {
+                    System.out.println("Unexpected error");
+                }
             }
         }
         System.out.println("Javier's time to get to (Calle " + this.terminalNode.getCalle()
@@ -308,8 +308,8 @@ public class Graph {
         while (!this.terminalNode.isIsInJavierPath()) { //While Javier hasnt reached the encounter point
             System.out.println("Colored Calle " + y.getCalle() + " Carrera " + y.getCarrera());
             y.setIsInJavierPath(true); //Set y in javiers path
-            for (int i = 0; i < 5; i++) {//From north to south
-                for (int j = 0; j < 5; j++) {//From east to west
+            for (int i = 0; i < 6; i++) {//From north to south
+                for (int j = 0; j < 6; j++) {//From east to west
                     if ((!this.nodeArray[i][j].isIsInJavierPath() && !this.nodeArray[i][j].isIsInAndreinaPath())
                             || this.nodeArray[i][j] == this.terminalNode) {
                         //For each node that isnt in Javier's path and, isnt in Andreina's path or is the terminal node
@@ -324,7 +324,6 @@ public class Graph {
                         } else if ( //Check if the actual candidates has a bigger dx
                                 nextY.getDx1() > this.nodeArray[i][j].getDx1()) {
                             nextY = this.nodeArray[i][j]; //Change candidates
-
                         }
                     }
                 }
@@ -334,9 +333,8 @@ public class Graph {
                 break;
             } else {
                 Edge e = null; //Find edge to color;
-                for (int i = 0; i < 5; i++) {
-                    for (int j = 0; j < 5; j++) {
-                        //For each colored node
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < 6; j++) { //For each colored node
                         if (this.nodeArray[i][j].isIsInJavierPath()) {
                             //Find edge
                             Edge auxEdge = this.findEdge(this.nodeArray[i][j], nextY);
@@ -364,13 +362,11 @@ public class Graph {
         System.out.println("Javier's time to get to (Calle " + this.terminalNode.getCalle()
                 + " - Carrera " + this.terminalNode.getCarrera() + "): " + this.terminalNode.getDx1());
         System.out.println("");
-
         //Find Javier's real path
         this.javierRealPath = this.findRealPath(this.javierInitalNode, false);
-
     }
-
     //Run Dijkstra Algorithm with priority for Andreina
+
     public void runDijkstraFirstForAndreina() {
         Node y = this.andreinaInitialNode; //Auxiliar node
         Node nextY = null; //Next candidate to be Y
@@ -378,8 +374,8 @@ public class Graph {
         while (!this.terminalNode.isIsInAndreinaPath()) { //While Andreina hasnt reached the encounter point
             System.out.println("Colored Calle " + y.getCalle() + " Carrera " + y.getCarrera());
             y.setIsInAndreinaPath(true); //Set y in Andreina's path
-            for (int i = 0; i < 5; i++) {
-                for (int j = 0; j < 5; j++) {
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
                     if (!this.nodeArray[i][j].isIsInAndreinaPath()) { //For each node that isnt in Andreina's path
                         Edge e = this.findEdge(y, this.nodeArray[i][j]); //Auxiliar edge for calcs
                         if (e != null) { //If the edge exists continue with calcs
@@ -401,8 +397,8 @@ public class Graph {
                 break;
             } else {
                 Edge e = null; //Find edge to color;
-                for (int i = 0; i < 5; i++) {
-                    for (int j = 0; j < 5; j++) {
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < 6; j++) {
                         //For each colored node
                         if (this.nodeArray[i][j].isIsInAndreinaPath()) {
                             //Find edge
@@ -420,12 +416,13 @@ public class Graph {
                     }
                 }
 
-                System.out.println("Colored edge from "
-                        + "Calle " + e.getNodeEnd1().getCalle() + " Carrera " + e.getNodeEnd1().getCarrera()
-                        + " to Calle " + e.getNodeEnd2().getCalle() + " Carrera " + e.getNodeEnd2().getCarrera());
-                e.setIsInAndreinaPath(true); //Color the edge
-                y = nextY; //Next y to calc
-                nextY = null; //Nullify for new candidates
+                if (e != null) {
+                    e.setIsInAndreinaPath(true); //Color the edge
+                    y = nextY; //Next y to calc
+                    nextY = null; //Nullify for new candidates   
+                } else {
+                    System.out.println("Unexpected error");
+                }
             }
         }
         System.out.println("Andreina's time to get to (Calle " + this.terminalNode.getCalle()
@@ -440,8 +437,8 @@ public class Graph {
         while (!this.terminalNode.isIsInAndreinaPath()) { //While Andreina hasnt reached the encounter point
             System.out.println("Colored Calle " + y.getCalle() + " Carrera " + y.getCarrera());
             y.setIsInAndreinaPath(true); //Set y in Andreina's path
-            for (int i = 0; i < 5; i++) {
-                for (int j = 0; j < 5; j++) {
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
                     if ((!this.nodeArray[i][j].isIsInAndreinaPath() && !this.nodeArray[i][j].isIsInJavierPath())
                             || this.nodeArray[i][j] == this.terminalNode) {
                         //For each node that isnt in Andreina's path and, isnt in Javier's path or is the terminal node
@@ -465,9 +462,8 @@ public class Graph {
                 break;
             } else {
                 Edge e = null; //Find edge to color;
-                for (int i = 0; i < 5; i++) {
-                    for (int j = 0; j < 5; j++) {
-                        //For each colored node
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < 6; j++) { //For each colored node
                         if (this.nodeArray[i][j].isIsInAndreinaPath()) {
                             //Find edge
                             Edge auxEdge = this.findEdge(this.nodeArray[i][j], nextY);
@@ -483,6 +479,7 @@ public class Graph {
                         }
                     }
                 }
+
                 if (e != null) {
                     e.setIsInAndreinaPath(true); //Edge enters the path
                     y = nextY; //Next y to use
@@ -492,7 +489,6 @@ public class Graph {
                 }
             }
         }
-
         System.out.println("Andreina's time to get to (Calle " + this.terminalNode.getCalle()
                 + " - Carrera " + this.terminalNode.getCarrera() + "): " + this.terminalNode.getDx2());
         System.out.println("");
@@ -501,8 +497,8 @@ public class Graph {
         this.andreinaRealPath = this.findRealPath(this.andreinaInitialNode, true);
 
     }
-
     //Find edge (i,j)
+
     public Edge findEdge(Node nodeX, Node nodeY) {
         for (int k = 0; k < this.edgesList.size(); k++) {
             if ((this.edgesList.get(k).getNodeEnd1() == nodeX && this.edgesList.get(k).getNodeEnd2() == nodeY)

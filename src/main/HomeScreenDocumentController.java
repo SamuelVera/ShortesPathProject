@@ -48,8 +48,8 @@ public class HomeScreenDocumentController implements Initializable {
     private void goAClick(MouseEvent event) throws IOException{
         System.out.println("Go to Darkness Discotheque");
             //Selecting Darkness Discotheque as ending node for the algorithm
-            //Calle 54 - 4 = 50 y Carrera 11 + 3 = 14
-        main.bogota.setTerminalNode(4, 3);
+            //Calle 55 - 5 = 50 y Carrera 15 - 1 = 14
+        main.bogota.setTerminalNode(5, 1);
         this.changeScreen(); //Change screen from the root
     }
 
@@ -61,8 +61,8 @@ public class HomeScreenDocumentController implements Initializable {
     private void goBClick(MouseEvent event) throws IOException{
         System.out.println("Go to La Pasión Bar");
             //Selecting La Pasión Bar as ending node for the algorithm
-            //Calle 54 - 0 = 54 y Carrera 11 + 0 = 10
-        main.bogota.setTerminalNode(0, 0);
+            //Calle 55 - 1 = 54 y Carrera 15 - 4 = 11
+        main.bogota.setTerminalNode(1, 4);
         this.changeScreen(); //Change screen from the root
     }
 
@@ -74,8 +74,8 @@ public class HomeScreenDocumentController implements Initializable {
     private void goCClick(MouseEvent event) throws IOException{
         System.out.println("Go to Mi Rolita Brewery");
             //Selecting Mi Rolita Brewery as ending node for the algorithm
-            //Calle 54 - 4 = 50 y Carrera 11 + 1 = 12
-        main.bogota.setTerminalNode(4, 1);
+            //Calle 55 - 5 = 50 y Carrera 15 - 3 = 12
+        main.bogota.setTerminalNode(5, 3);
         this.changeScreen(); //Change screen from the root
     }
     
