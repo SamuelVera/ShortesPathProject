@@ -261,6 +261,8 @@ public class Graph {
         System.out.println("Javier's time to get to (Calle " + this.terminalNode.getCalle()
                 + " - Carrera " + this.terminalNode.getCarrera() + "): " + this.terminalNode.getDx1());
         System.out.println("");
+
+        this.prepareForSecondDijkstraForAndreina();
     }
 
     public void runDijkstraSecondForJavier() {
@@ -386,6 +388,8 @@ public class Graph {
         System.out.println("Andreina's time to get to (Calle " + this.terminalNode.getCalle()
                 + " - Carrera " + this.terminalNode.getCarrera() + "): " + this.terminalNode.getDx2());
         System.out.println("");
+
+        this.prepareForSecondDijkstraForJavier();
     }
 
     public void runDijkstraSecondForAndreina() {
