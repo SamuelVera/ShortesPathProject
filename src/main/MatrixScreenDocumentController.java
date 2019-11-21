@@ -256,7 +256,7 @@ public class MatrixScreenDocumentController implements Initializable {
         javierTime = n1.getDx1();
         
         this.andreinaTime.setText("Andreina tarda "+ andreinaTime +" minutos en llegar");
-        this.javierTime.setText("Javier tarde "+javierTime+" minutos en llegar");
+        this.javierTime.setText("Javier tarda "+javierTime+" minutos en llegar");
         
         if( javierTime > andreinaTime){
             this.timeDifference.setText("Javier debe salir "+( javierTime - andreinaTime )+" minutos antes de Andreina");
