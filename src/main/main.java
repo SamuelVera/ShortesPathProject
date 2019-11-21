@@ -2,6 +2,8 @@ package main;
 
 //Data models
 import Objects.Graph;
+import Objects.Node;
+import java.util.Stack;
 //FX
 import javafx.application.Application;
 import javafx.stage.Stage;

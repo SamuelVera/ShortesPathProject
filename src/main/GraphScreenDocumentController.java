@@ -5,12 +5,10 @@
  */
 package main;
 
-import Objects.Node;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Stack;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -29,8 +27,6 @@ public class GraphScreenDocumentController implements Initializable{
     private JFXButton calcJavier;
     @FXML
     private JFXButton calcAndreina;
-    @FXML
-    private JFXButton goBack;
 
     /**
      * Initializes the controller class.
@@ -40,25 +36,9 @@ public class GraphScreenDocumentController implements Initializable{
         
     }
     
-    private void showPaths(){
-        Stack<Node> andreinaPath = main.bogota.getAndreinaRealPath();
-        Stack<Node> javierPath = main.bogota.getJavierRealPath();
+    private void showPaths() throws IOException{
         
-        Node n;
-        
-        System.out.println("Andreina's path");
-        while(!andreinaPath.isEmpty()){
-            n = andreinaPath.pop();
-            System.out.println("Calle " + n.getCalle() + " - Carrera " + n.getCarrera());
-        }
-        
-        System.out.println("Javier's path");
-        while(!javierPath.isEmpty()){
-            n = javierPath.pop();
-            System.out.println("Calle " + n.getCalle() + " - Carrera " + n.getCarrera());
-        }
-        
-        this.goBack.setVisible(true);
+        main.sController.changeScene("/UI/MatrixScreenDocument.fxml");
         
     }
 
@@ -67,7 +47,7 @@ public class GraphScreenDocumentController implements Initializable{
      * @param event 
      */
     @FXML
-    private void onCalcJavierClick(MouseEvent event) {
+    private void onCalcJavierClick(MouseEvent event) throws IOException {
         System.out.println("Javier first");
             //Set Javier going first
         main.bogota.prepareForDijkstra();
@@ -84,7 +64,7 @@ public class GraphScreenDocumentController implements Initializable{
      * @param event 
      */
     @FXML
-    private void onCalcAndreinaClick(MouseEvent event) {
+    private void onCalcAndreinaClick(MouseEvent event) throws IOException {
         System.out.println("Andreina first");
         main.bogota.prepareForDijkstra();
         main.bogota.runDijkstraFirstForAndreina();
@@ -92,23 +72,6 @@ public class GraphScreenDocumentController implements Initializable{
         this.calcJavier.setVisible(false);
         this.calcAndreina.setVisible(false);
         this.showPaths();
-    }
-    
-    /**
-     * Event handler for calc first Andreina's path
-     * @param event 
-     */
-    @FXML
-    private void onGoBackClick(MouseEvent event) throws IOException {
-        this.changeScreen();
-    }
-    
-    /**
-     * Go back to home
-     */
-    private void changeScreen() throws IOException{
-            //Use singleton to change screen
-        main.sController.changeScene("/UI/HomeScreenDocument.fxml");
     }
     
 }

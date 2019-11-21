@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatrixScreenDocumentController">
+   <children>
+      <Line id="54-15/14" fx:id="h6" endX="-26.0" endY="-50.0" layoutX="73.0" layoutY="144.0" startX="71.79290771484375" startY="-49.000030517578125" />
+      <Text layoutX="137.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K14" />
+      <Line id="14-55/54" fx:id="v2" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="144.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="14-54/53" fx:id="v8" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="199.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="14-53/52" fx:id="v14" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="254.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="14-52/51" fx:id="v20" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="309.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="14-51/50" fx:id="v26" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="364.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="13-55/54" fx:id="v3" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="145.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="13-54/53" fx:id="v9" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="200.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="13-53/52" fx:id="v15" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="255.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="13-52/51" fx:id="v21" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="310.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="13-51/50" fx:id="v27" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="365.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="12-55/54" fx:id="v4" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="145.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="12-54/53" fx:id="v10" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="200.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="12-53/52" fx:id="v16" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="255.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="12-52/51" fx:id="v22" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="310.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="12-51/50" fx:id="v28" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="365.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="11-55/54" fx:id="v5" endX="-26.0" endY="-50.0" layoutX="472.0" layoutY="145.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="11-54/53" fx:id="v11" endX="-26.0" endY="-50.0" layoutX="472.0" layoutY="200.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="11-53/52" fx:id="v17" endX="-26.0" endY="-50.0" layoutX="472.0" layoutY="255.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="11-52/51" fx:id="v23" endX="-26.0" endY="-50.0" layoutX="472.0" layoutY="310.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="11-51/50" fx:id="v29" endX="-26.0" endY="-50.0" layoutX="472.0" layoutY="365.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="10-55/54" fx:id="v6" endX="-26.0" endY="-50.0" layoutX="572.0" layoutY="145.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="10-54/53" fx:id="v12" endX="-26.0" endY="-50.0" layoutX="572.0" layoutY="200.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="10-53/52" fx:id="v18" endX="-26.0" endY="-50.0" layoutX="572.0" layoutY="255.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="10-52/51" fx:id="v24" endX="-26.0" endY="-50.0" layoutX="572.0" layoutY="310.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="10-51/50" fx:id="v30" endX="-26.0" endY="-50.0" layoutX="572.0" layoutY="365.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="54-14/13" fx:id="h7" endX="-26.0" endY="-50.0" layoutX="173.0" layoutY="145.0" startX="71.79290771484375" startY="-49.29290771484375" />
+      <Line id="54-13/12" fx:id="h8" endX="-26.0" endY="-50.0" layoutX="273.0" layoutY="146.0" startX="71.79290771484375" startY="-50.29290771484375" />
+      <Line id="54-12/11" fx:id="h9" endX="-26.0" endY="-50.0" layoutX="373.0" layoutY="146.0" startX="73.70709228515625" startY="-50.29290771484375" />
+      <Line id="54-11/10" fx:id="h10" endX="-23.5858154296875" endY="-49.146453857421875" layoutX="471.0" layoutY="145.0" startX="73.79290771484375" startY="-49.29290771484375" />
+      <Line id="15-55/54" fx:id="v1" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="144.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="15-54/53" fx:id="v7" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="199.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="15-53/52" fx:id="v13" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="254.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="15-52/51" fx:id="v19" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="309.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="15-51/50" fx:id="v25" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="364.0" startX="-26.5" startY="-103.29290771484375" />
+      <Line id="53-15/14" fx:id="h11" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="199.0" startX="71.79290771484375" startY="-49.000030517578125" />
+      <Line id="53-14/13" fx:id="h12" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="200.0" startX="71.79290771484375" startY="-49.29290771484375" />
+      <Line id="53-13/12" fx:id="h13" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="201.0" startX="71.79290771484375" startY="-50.29290771484375" />
+      <Line id="53-12/11" fx:id="h14" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="201.0" startX="73.70709228515625" startY="-50.29290771484375" />
+      <Line id="53-11/10" fx:id="h15" endX="-23.5858154296875" endY="-49.146453857421875" layoutX="470.0" layoutY="200.0" startX="73.79290771484375" startY="-49.29290771484375" />
+      <Line id="52-15/14" fx:id="h16" endX="-26.0" endY="-50.0" layoutX="71.0" layoutY="253.0" startX="71.79290771484375" startY="-49.000030517578125" />
+      <Line id="52-14/13" fx:id="h17" endX="-26.0" endY="-50.0" layoutX="171.0" layoutY="254.0" startX="71.79290771484375" startY="-49.29290771484375" />
+      <Line id="52-13/12" fx:id="h18" endX="-26.0" endY="-50.0" layoutX="271.0" layoutY="255.0" startX="71.79290771484375" startY="-50.29290771484375" />
+      <Line id="52-12/11" fx:id="h19" endX="-26.0" endY="-50.0" layoutX="371.0" layoutY="255.0" startX="73.70709228515625" startY="-50.29290771484375" />
+      <Line id="52-11/10" fx:id="h20" endX="-23.5858154296875" endY="-49.146453857421875" layoutX="469.0" layoutY="254.0" startX="77.70709228515625" startY="-48.29290771484375" />
+      <Line id="51-15/14" fx:id="h21" endX="-26.0" endY="-50.0" layoutX="70.0" layoutY="308.0" startX="71.79290771484375" startY="-49.000030517578125" />
+      <Line id="51-14/13" fx:id="h22" endX="-26.0" endY="-50.0" layoutX="170.0" layoutY="309.0" startX="71.79290771484375" startY="-49.29290771484375" />
+      <Line id="51-13/12" fx:id="h23" endX="-26.0" endY="-50.0" layoutX="270.0" layoutY="310.0" startX="71.79290771484375" startY="-50.29290771484375" />
+      <Line id="51-12/11" fx:id="h24" endX="-26.0" endY="-50.0" layoutX="370.0" layoutY="310.0" startX="73.70709228515625" startY="-50.29290771484375" />
+      <Line id="51-11/10" fx:id="h25" endX="-23.5858154296875" endY="-49.146453857421875" layoutX="468.0" layoutY="309.0" startX="77.75" startY="-48.000030517578125" />
+      <Line id="50-15/14" fx:id="h26" endX="-26.0" endY="-50.0" layoutX="72.0" layoutY="364.0" startX="71.79290771484375" startY="-49.000030517578125" />
+      <Line id="50-14/13" fx:id="h27" endX="-26.0" endY="-50.0" layoutX="172.0" layoutY="365.0" startX="71.79290771484375" startY="-49.29290771484375" />
+      <Line id="50-13/12" fx:id="h28" endX="-26.0" endY="-50.0" layoutX="272.0" layoutY="366.0" startX="71.79290771484375" startY="-50.29290771484375" />
+      <Line id="50-12/11" fx:id="h29" endX="-26.0" endY="-50.0" layoutX="372.0" layoutY="366.0" startX="73.70709228515625" startY="-50.29290771484375" />
+      <Line id="50-11/10" fx:id="h30" endX="-23.5858154296875" endY="-49.146453857421875" layoutX="470.0" layoutY="365.0" startX="73.79290771484375" startY="-49.29290771484375" />
+      <Line id="55-15/14" fx:id="h1" endX="-26.0" endY="-50.0" layoutX="73.0" layoutY="89.0" startX="71.79290771484375" startY="-49.000030517578125" />
+      <Line id="55-14/13" fx:id="h2" endX="-26.0" endY="-50.0" layoutX="169.0" layoutY="90.0" startX="73.29290771484375" startY="-49.07322692871094" />
+      <Line id="55-13/12" fx:id="h3" endX="-26.0" endY="-50.0" layoutX="269.0" layoutY="91.0" startX="73.29290771484375" startY="-50.146453857421875" />
+      <Line id="55-12/11" fx:id="h4" endX="-26.0" endY="-50.0" layoutX="369.0" layoutY="91.0" startX="73.70709228515625" startY="-50.29290771484375" />
+      <Line id="55-11/10" fx:id="h5" endX="-23.5858154296875" endY="-49.146453857421875" layoutX="467.0" layoutY="90.0" startX="79.70709228515625" startY="-49.00001525878906" />
+      <Text layoutX="37.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K15" />
+      <Text layoutX="237.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K13" />
+      <Text layoutX="337.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K12" />
+      <Text layoutX="437.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K11" />
+      <Text layoutX="536.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K10" />
+      <Text layoutX="556.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C55" />
+      <Text layoutX="556.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C54" />
+      <Text layoutX="556.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C53" />
+      <Text layoutX="556.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C52" />
+      <Text layoutX="556.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C51" />
+      <Text layoutX="556.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C50" />
+      <Circle fill="DODGERBLUE" layoutX="146.0" layoutY="315.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="246.0" layoutY="204.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="146.0" layoutY="95.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="346.0" layoutY="315.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="446.0" layoutY="96.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="142.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" wrappingWidth="8.898432493209839" />
+      <Text layoutX="242.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" wrappingWidth="8.898432493209839" />
+      <Text layoutX="342.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R" wrappingWidth="8.898432493209839" />
+      <Text layoutX="142.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J" wrappingWidth="8.898425102233887" />
+      <Text layoutX="442.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" wrappingWidth="8.898432493209839" />
+      <Button fx:id="goBack" layoutX="486.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onGoBackClick" text="Volver" />
+      <Text fx:id="javierTime" layoutX="41.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="302.13671875" />
+      <Text fx:id="andreinaTime" layoutX="41.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="302.13671875" />
+      <Text fx:id="timeDifference" layoutX="37.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="302.13671875" />
+   </children>
+</Pane>
